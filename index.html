@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        img {
+            width: 100%;
+            max-width: 1000px;
+            border: 1px solid #ccc;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Задание 2</h1>
+
+    <section>
+        <h2>0. Загрузка файлов в каталог files через GitHub</h2>
+        <p>
+            Необходимые файлы были добавлены в удалённый репозиторий GitHub и размещены на веб-сервере.
+            После этого была проверена их доступность через браузер по учебному домену.
+        </p>
+        <img src="github.png" alt="Загрузка файлов через GitHub">
+        <img src="clone.png" alt="Клонирование файлов через GitHub">
+    </section>
+
+    <section>
+        <h2>1. Получение главной страницы методом GET (HTTP/1.0)</h2>
+        <p>
+            С помощью метода GET выполнен запрос к главной странице сервера с использованием протокола HTTP/1.0.
+            В ответ были получены заголовки, подтверждающие обработку запроса веб-сервером.
+        </p>
+        <img src="1_get_main.png" alt="GET главной страницы HTTP 1.0">
+    </section>
+
+    <section>
+        <h2>2. Получение внутренней страницы методом GET (HTTP/1.1)</h2>
+        <p>
+            Был отправлен GET-запрос к внутреннему каталогу сайта с использованием протокола HTTP/1.1.
+            Для корректной обработки запроса был указан заголовок Host.
+            В ответ сервер вернул информацию о ресурсе.
+        </p>
+        <img src="2_get_inner.png" alt="GET внутренней страницы HTTP 1.1">
+    </section>
+
+    <section>
+        <h2>3. Определение размера файла file.tar.gz без скачивания (HEAD)</h2>
+        <p>
+            Для определения размера файла file.tar.gz был использован метод HEAD,
+            который позволяет получить только заголовки ответа без загрузки самого файла.
+            Размер файла определён по значению заголовка Content-Length.
+        </p>
+        <img src="3_file_size.png" alt="HEAD file.tar.gz Content-Length">
+    </section>
+
+    <section>
+        <h2>4. Определение медиатипа ресурса /image.png</h2>
+        <p>
+            Тип содержимого ресурса image.png был определён с помощью метода HEAD.
+            В заголовках ответа сервера получено значение Content-Type,
+            указывающее на формат передаваемых данных.
+        </p>
+        <img src="4_mime_type.png" alt="Content-Type image/png">
+    </section>
+
+    <section>
+        <h2>5. Отправка комментария на сервер по адресу /index.php (POST)</h2>
+        <p>
+            На сервер был отправлен POST-запрос к скрипту index.php с передачей данных формы.
+            Данные были переданы в формате application/x-www-form-urlencoded.
+            Сервер принял запрос и вернул ответ с результатом обработки.
+        </p>
+        <img src="5_post.png" alt="POST запрос к index.php">
+    </section>
+
+    <section>
+        <h2>6. Получение первых 100 байт файла /file.tar.gz</h2>
+        <p>
+            Для получения части файла file.tar.gz был использован заголовок Range,
+            позволяющий запросить только определённый диапазон байт.
+            В результате сервер вернул первые 100 байт файла, что подтверждается кодом ответа 206 Partial Content.
+        </p>
+        <img src="6_range.png" alt="Range bytes 0-99">
+    </section>
+
+    <section>
+        <h2>7. Определение кодировки ресурса /index.php</h2>
+        <p>
+            Кодировка страницы index.php была определена с помощью метода HEAD.
+            В заголовке Content-Type указано значение charset, которое определяет используемую кодировку документа.
+        </p>
+        <img src="7_charset.png" alt="Charset index.php">
+    </section>
+
+</div>
+
+</body>
+</html>
